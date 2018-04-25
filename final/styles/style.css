@@ -1,8 +1,410 @@
-/*This file would contain the styles for all the pages */
+/******************************/
+/* CSS FOR GLOWREADS HOMEPAGE */
+/******************************/
+@charset "utf-8";
 
-/* Sharded Styles */
+	/* This is to make the navigation links animate when hovered over */
+	/* Fading in and out was chosen because it looks more more professional than roating or changing colours */
+	a:hover {
+   		opacity: 1;
+    	animation: fade 3.5s infinite;
+	}
+
+	@keyframes fade {
+
+	/* The lowest opacity is 0.5 because I do not want the nav links to fade out completely */
+ 	0%,100% { opacity: 0.5 }
+ 	50% { opacity: 1 }
+	}
+
+	/*.fadeinout-transition {
+		 test attribute 
+		size: 1000px;
+	}*/
+
+@font-face {
+    font-family: 'cac_champagneregular';
+    src: url('../fonts/cac_champagne-webfont.eot');
+    src: url('../fonts/cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cac_champagne-webfont.woff2') format('woff2'),
+         url('../fonts/cac_champagne-webfont.woff') format('woff'),
+         url('../fonts/cac_champagne-webfont.ttf') format('truetype'),
+         url('../fonts/cac_champagne-webfont.svg#cac_champagneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
-/* Home Page Styles */
+/* Arimo was chosen because it clean looking, and compatible with many different styles */
+@import url('https://fonts.googleapis.com/css?family=Arimo');
 
-/* Third Page Styles */
+
+/* CSS reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* CSS clearfix */
+.clearfix {
+	overflow: auto;
+}
+
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+
+body {
+	/* Original site design intended to have a default white background, but was changed to an off-colour white */
+	background-color: #FFFFF4;
+	/* Times new roman, and sarif to be used as back up fonts if googlefonts is unavailable */
+	font-family: "Arimo", "Times new roman", serif;
+
+
+}
+
+h3 {
+	font-family: "cac_champagneregular";
+}
+
+
+
+/***************/
+/* DESKTOP CSS */
+/***************/
+
+@media only screen and (min-width: 768px) {
+
+	* {
+		max-width: 1280px;
+	}
+
+	/* Footer is not used here to keep it centered no matter what screen size */
+	/* It looks too awkward when the grey background is suddenly truncated, and the text is no longer dead ceneter */
+	header, main {
+		max-width: 1280px;
+		margin-top: 0 auto;
+	}
+
+	/* Main Glowreads logo, to appear at the top left */
+	/* New logo has transparency, and new shade of red since intial homepage build */
+	.logo {
+		float: top;
+		padding-top: 25px;
+		padding-left: 25px;
+	}
+
+	/* Using float commands in ".contact-link a{}" was creating errors. Will look into later */
+	.contact-link {
+		float: right;
+		padding-top: 45px;
+		/* 25% to keep button centered on second half of window */
+		padding-right: 25%;
+	}
+
+	.contact-link a {
+		/* This is to match the new shade of red in the main Glowreads logo */
+		color: #000000;
+		/* To remove underline, Contact button will have different decoration */
+		text-decoration: none;
+		/* Border around contact button to make it stand out from the other nav links, and to match the main logo image */
+		border: 5px solid #CF2525;
+		/* Border-radius is current commented out, will check with client at later date to see if they would prefer rounded corners over the default */
+		/*border-radius: 5px;*/
+
+		/* To appear larger than the nav links, but not as large as the main logo */
+		font-size: 38px;
+	}
+
+	.navigation-link a {
+		color: #000000;
+		padding-left: 25px;
+		/* 600px to match length of Glowreads logo */
+		box-sizing: 600px;
+		/* To position the nav links centered under the Glowreads logo */
+		text-align: center;
+		margin: 25px;
+		/* Underline color is to match the new shade of red in Glowreads logo */
+		text-decoration: underline solid #CF2525;
+	}
+
+	.product-image {
+		/* 45% because review quotes are to go to the left of the picture */
+		width: 45%;
+		float: left;
+		padding: 25px;
+	}
+
+	.testimonials-header {
+		/* To line up with product-image */
+		padding-top: 25px;
+	}
+
+	.testimonials h3 ul li {
+		width: 45%;
+
+		/* no longer needed */
+		/*max-width: 900px;*/
+
+		text-align: left;
+		float: right;
+		padding-right: 25px;
+	}
+
+	.testimonials h3 {
+		/* Originally only the serr more link was centered, but this looks nicer. Will double check with client. */
+		text-align: center;
+		text-decoration: underline solid #CF2525;
+	}
+
+	.review-quote {
+		/* Little extra space between quotes for readability */
+		margin: 20px auto;
+	}
+
+
+	.footer {
+		/* serif instead of Arimo to appear more professional */
+		font-family: serif;
+
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+		margin: 10px;
+		width: 100%;
+		background-color: #C0C0C0;
+	}
+
+	
+	/*******************/
+	/* CONTACT PAGE CSS*/
+	/*******************/
+	.contactDiv {
+		width: 40%;
+		margin-left: 20px;
+		padding: 10px;
+		display: block;
+	}
+
+	.commentsHeader {
+		padding-top: 8px;
+	}
+
+	.inputField {
+		/* This keeps the input forms in line with eachother, but not too far from their labels*/
+		float: right;
+		/* This is too give the user more space to work with */
+		width: 65%;
+	}
+
+	.inputFieldLarge {
+		/* These 2 lines are to give the user more space to write */
+		width: 100%;
+		height: 220px;
+		/* To match the look of the Contact button*/
+		border: 5px solid #CF2525;
+	}
+
+	/* To put a little bit of space between the message field, and the check boxes */
+	.checkDiv {
+		padding-top: 8px;
+	}
+
+	.radioButtonHeader {
+		/* To put a little bit of space between the check boxes and the radio buttons */
+		padding-top: 3px;
+		/* To line up above the radio buttons */
+		float: right;
+	}
+
+	.radioLabel {
+		/* This is to place the radio check buttons directly above the submit button */
+		/* This also makes the radio check buttons inline with each other */
+		float: right;
+	}
+
+	.submitButton {
+		float: right;
+		/* This is to seperate it, and make it stand out more */
+		margin: 10px;
+		/* To match the contact button */
+		border: 5px solid #CF2525;
+
+	}
+
+}
+
+/***************/
+/* TABLET CSS */
+/***************/
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+	.testimonials-header {
+		/* Removed for tablet, screen is too busy with it added, and is already quite self-explanetory*/
+		display: none;
+	}
+
+	.logo {
+		width: 50%;
+	}
+
+	.product-image {
+		width: 50%;
+	}
+
+	.contact-link * {
+		color: #000000;
+		/* To remove underline, Contact button will have different decoration */
+		text-decoration: none;
+		/* Border around contact button to make it stand out from the other nav links, and to match the main logo image */
+		border: 5px solid #CF2525;
+		position: relative;
+		float: right;
+		text-align: right;
+	}
+
+	.navigation-link a {
+		color: #000000;
+		/* Less padding for tablet*/
+		padding-left: 10px;
+		/* Underline color is to match the new shade of red in Glowreads logo */
+		text-decoration: underline solid #CF2525;
+	}
+
+	.testimonials h3 ul li {
+		width: 100%;
+
+		text-align: center;
+		float: right;
+	}
+
+	.review-quote {
+		/* Little extra space between quotes for readability */
+		margin: 20px auto;
+	}
+
+	.see-more-link {
+		text-align: center;
+		text-decoration: underline solid #CF2525;
+	}
+
+	.footer {
+		/* serif instead of Arimo to appear more professional */
+		font-family: serif;
+
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		
+		padding-left: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+		margin: 10px;
+		width: 100%;
+		background-color: #C0C0C0;
+	}
+
+}
+
+/***************/
+/* MOBILE CSS */
+/***************/
+@media only screen and (max-width: 480px) and (min-width: 1px) {
+
+	body {
+		/* There is no float:center */
+		/* Probably very messy and inelequent trick */
+		/*float: left;*/
+		/*padding-right: 50%;*/
+
+		/* This whole section has been commented out, not sure what I was thinking. */
+	}
+	
+	.navigation-link {
+		/* To be replaced with a hamburger button at a later date */
+		display: none;
+	}
+
+	.product-image {
+		width: 100%;
+	}
+
+	.logo {
+		width: 100%;
+	}
+
+	.contact-link {
+		text-align: center;
+		/* Border around contact button to make it stand out from the other nav links, and to match the main logo image */
+		border: 5px solid #CF2525;
+		/* Border-radius is current commented out, will check with client at later date to see if they would prefer rounded corners over the default */
+		/*border-radius: 5px;*/
+
+		/* To appear larger than the nav links, but not as large as the main logo */
+		font-size: 38px;
+	}
+
+	.contact-link a {
+		color: black;
+		text-decoration: none;
+	}
+
+	.review-quote {
+		/* Little extra space between quotes for readability */
+		margin: 20px auto;
+		/* Added text-align: center for mobile */
+		text-align: center;
+	}
+
+	.testimonials-header {
+		/* Removed for mobile, screen is too busy with it added, and is already quite self-explanetory*/
+		display: none;
+	}
+
+	.see-more-link {
+		text-align: center;
+		text-decoration: underline solid #CF2525;
+	}
+
+	.footer {
+		/* serif instead of Arimo to appear more professional and legal*/
+		font-family: serif;
+
+		position: absolute;
+		right: 0;
+		left: 0;
+		
+		text-align: center;
+
+		/* Extra margin to keep footer away from see-more-link */
+		margin-top: 25px;
+		background-color: #C0C0C0;
+
+		/* This line prevents the grey background from occasionally covering the see-more-link */
+		max-height: auto;
+	}
+
+	.contactDiv * {
+		float: center;
+		width: 100%;
+		/* Little extra margin to make it look cleaner */
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+
+}
+

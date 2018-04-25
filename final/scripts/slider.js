@@ -1,1 +1,1 @@
-// This js is for slider goes in this file
+// Slider java script

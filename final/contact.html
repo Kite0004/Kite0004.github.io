@@ -1,9 +1,173 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Contact Page</title>
-</head>
-<body>
+<!-- The website will be translated into French at a later date, and will then include the fr-CA attribute -->
+<html lang="en-CA">
+	<!-- Link to style sheet, uses the same one as homepage-->
 
-</body>
+	<!-- Start of head -->
+	<head>
+		<!-- Link tag must be within head tag, causes validation error otherwise -->
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<meta charset="utf-8">
+		<meta name="description" content="Glowreads contact page">
+			<!-- Assuming that the client will always want GLOWREADS in the title -->
+			<title>GLOWREADS | Contact Us!</title>
+
+		<!-- Keywords as defined by the client  -->
+		<!-- Homepage keywords plus new contact page keywords. Will have to double check if this is too many keyowrds for best practices at a later date -->
+		<meta name="keywords" content="glowreads, redpages, books, publishing, reading, new technology, contact, about, support, information">
+		<meta name="robots" content="index, follow">
+	</head>
+	<!-- End of head -->
+
+	<body>
+		<!-- Start of header -->
+		<!-- Header copied from homepage (index.html) -->
+		<header class="site-header">
+			<!-- Glowreads logo will be an image in top left corner, and links back to the homepage -->
+			<a href="index.html">
+				<img src="images/glowreads_logo.png" class="logo" alt="Glowreads Logo">
+			</a>
+			<!-- In final build, this link will be horizaontally aligned with the logo, and in the right hand corner -->	
+			<h2 id="contact-us" class="contact-link">
+				<a href="contact.html" title="contact us">Contact Us!</a>
+			</h2>
+
+			<!-- All navigation links other than "contact us" will be styled the same -->
+			<h3 id="navigation" class="navigation-link">
+				<!-- Main navigation links for the website -->
+				<!-- In the final build they will be evenly spaced out -->
+				<a href="media.html" title="media">media</a>
+				<a href="about_us_page.html" title="about us">about us</a>
+				<a href="technology_page.html" title="technology">technology</a>
+				<a href="kickstarter_page.html" title="kickstarter">kickstarter</a>
+			</h3>
+
+		</header>	
+		<!-- End of header -->
+
+		<!-- Start of contact form area -->
+		<div class="contactDiv">
+
+		<!-- GIVEN NAME CODE -->
+		<div id="givenNameDiv">
+			<!-- glowreadsEmail.php is the address given by client, will double check with client that they are recieving data correctly -->
+			<form id="givenNameForm" action="glowreadsEmail.php" method="get">
+				<label class="inputLabel" for="givenName">Given Name: </label>
+				<input class="inputField" type="text" name="givenName" id="givenName">
+			</form>
+		</div>
+
+		<!-- FAMILY NAME CODE -->
+		<div id="familyNameDiv">
+			<form id="familyNameForm" action="glowreadsEmail.php" method="get">
+				<label class="inputLabel" for="familyName">Family Name: </label>
+				<input class="inputField" type="text" name="familyName" id="familyName">	
+			</form>
+		</div>
+
+		<!-- EMAIL FIELD CODE -->
+		<div id="userEmailDiv">
+			<form id="userEmailForm" action="glowreadsEmail.php" method="get">
+				<!-- ids and other attributes will use 'userEmail', instead of simply 'email', for clarity -->
+				<!-- The label text 'Email: ' is sufficient for end user use -->
+				<label class="inputLabel" for="userEmail">Email: </label>
+				<input class="inputField" type="email" name="userEmail" id="userEmail">	
+			</form>
+		</div>
+
+		<!-- MESSAGE FIELD CODE -->
+		<h4 class="commentsHeader">
+			Comments, questions, or concerns?
+			Please let us know below:
+		</h4>
+		<!-- The line below has been commented out, combining these into a single h4 tag was easier to style as I wanted -->
+		<!-- <h4 class="commentsHeader">Please let us know below: </h4> -->
+
+		<div id="userMessageDiv">
+			<form id="userMessageForm" action="glowreadsEmail.php" method="get">
+				<!-- The following line was moved to and <h4>. Will leave incase we need to go back -->
+				<!-- <label for="userMessage">Comments, questions, or concerns? Please enter below: </label> -->
+
+				<!-- I should still include blank label -->
+				<!-- Nevermind, I shoudn't include it, it brings up errors when included. -->
+				<!-- <label class="inputLabel" for="userMessage"></label> -->
+
+				<!-- Client wants the input field to default to a larger size, will look at later -->
+				<!-- Originally had include a Type attribute to textarea, but a validator said that is not allowed -->
+				<textarea class="inputFieldLarge" name="userMessage" id="userMessageField"></textarea> 
+			</form>
+		</div>
+
+		<!-- CHECK BOXES CODE -->
+		<!-- This h5 tag is class="checkDiv" because it is to be styled together with the check buttons -->
+		<h5 class="checkDiv">Which product or service is your inquiry about? (Select both if applicable)</h5>
+		<div class="checkDiv">
+			<label for="supportCheck">
+				Technical Support
+				<input type="checkbox" name="inquiryType" id="supportCheck" value="support">
+			</label>
+
+			<label for="productCheck">
+				Redpages Product
+				<input type="checkbox" name="inquiryType" id="productCheck" value="product">
+			</label>
+		</div>
+
+		<!-- RADIO BUTTONS CODE -->
+		<h5 class="radioButtonHeader">What kind of Glowreads patron are you?</h5>
+		<!-- This break is needed to help formatting -->
+		<br>
+		<div class="radioDiv">
+			<label class="radioLabel" for="personal">
+				Private or personal use:
+				<input class="radioButton" type="radio" name="userType" id="personal">
+			</label>
+			<br>
+			<label class="radioLabel" for="enterprise">
+				Business or enterprise use: 
+				<input class="radioButton" type="radio" name="userType" id="enterprise">
+			</label>
+		</div>
+
+		<!-- SUBMIT BUTTON CODE -->
+
+		<!-- <br> to help spacing issues -->
+		<br>
+		<div class="submitButtonDiv">
+			<button type="submit" class="submitButton">SUBMIT</button>
+		</div>
+		
+		</div>
+		<!-- End of contact for area -->
+
+
+		<!-- Start of footer -->
+		<!-- Footer copied from homepage (index.html) -->
+		<footer id="footer" class="footer">
+			<h5>Contact Information:</h5>
+			<span id="copyrightName">Andrew Kite</span>
+				<!-- roomNumber in it's own <div> container to make it appear under the name Andrew Kite -->
+				<div>
+					<span id="roomNumber">Room B-357</span>
+				</div>
+				<!-- Address of the college designing and hosting the website, not the Glowreads address  -->				
+				<div class="addressFull">
+					<span id="addressStreet">1385 Woodroffe Ave.</span>
+					<!-- Second part of address has own <div> container to make it appear under the Woodroffe address -->
+					<div>
+						<span id="addressCity">Ottawa</span>
+						<span id="addressProvince">Ontario</span>
+						<span id="addressCountry">Canada</span>					
+						<span id="addressPostalCode">K2G 1V8</span>
+					</div>
+				</div>
+			<section id="copyrightWatermark">
+				<h5>Copyright Information:</h5>
+				<p>Copyright &copy; 2018 Glowreads &amp; Andrew Kite</p>
+			</section>
+		</footer>
+		<!-- End of footer -->
+
+
+	</body>
 </html>

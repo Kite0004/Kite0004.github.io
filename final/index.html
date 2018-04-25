@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Home Page</title>
-</head>
-<body>
-<h1>Home Page changes</h1>
-<p>The changes are working...........yay :) :^) :D ;p </p>
-</body>
+<!-- The website will be translated into French at a later date, and will then include the fr-CA attribute -->
+<html lang="en-CA">
+	<!-- Link to style sheet for homepage -->
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	
+	<!-- Start of head -->
+	<head>
+		<meta charset="utf-8">
+			<title>GLOWREADS: Redpages Technology, A New Way to Read Books</title>
+			<!-- Will ask client if they would prefer something more pertinent, or verbose at a later date -->
+		<meta name="description" content="Glowreads homepage">
+		<!-- Keywords as defined by the client  -->
+		<meta name="keywords" content="glowreads, redpages, books, publishing, reading, new technology">
+		<meta name="robots" content="index, follow">
+
+	</head>
+	<!-- End of head -->
+
+	<!-- Start of body -->
+	<body>
+		<!-- Start of header -->
+		<header class="site-header">
+				<!-- Glowreads logo will be an image in top left corner, and links back to the homepage -->
+				<a href="index.html">
+					<img src="images/glowreads_logo.png" class="logo" alt="Glowreads Logo">
+				</a>
+				<!-- In final build, this link will be horizaontally aligned with the logo, and in the right hand corner -->	
+				<h2 id="contact-us" class="contact-link" onmouseover="onmouseContactFunction()">
+					<a href="contact.html" title="contact us">Contact Us!</a>
+				</h2>
+
+			<!-- All navigation links other than "contact us" will be styled the same -->
+			<h3 id="navigation" class="navigation-link">
+				<!-- Main navigation links for the website -->
+				<!-- In the final build they will be evenly spaced out -->
+				<a href="media.html" title="media">media</a>
+				<a href="about_us_page.html" title="about us">about us</a>
+				<a href="technology_page.html" title="technology">technology</a>
+				<a href="kickstarter_page.html" title="kickstarter">kickstarter</a>
+			</h3>				
+		</header>	
+		<!-- End of header -->
+
+		<!-- Start of main -->
+		<main id="main" class="main">
+			<!-- Large image of the Redpages product, aligned on the left side of the page -->
+			<div id="product-img" class="product-img">
+				<img onClick="clickProductImage()" src="images/product_img.png" class="product-image" alt="Redpages Product Image">
+			</div>
+			<!-- Testimonials about the product -->
+			<div id="testimonials" class="testimonials">
+				<!-- Will require client to provide chosen quotes and content for this section at a later date -->
+				<h3 class ="testimonials-header">Here's what people have to say about the Redpages technology!</h3>
+				<ul id="review-quote">
+					<!-- Quotes will be italicized in a future build -->
+					<li class="review-quote">"This is the greatest product I've ever used! 5 Stars!" -Goodreads.com</li>
+					<li class="review-quote">"We look forward to bringing Redpages technology into our product lineup in the future." - Penguin Publishing.</li>
+					<li class="review-quote">"I wish this technology was around when I was alive and publishing books." -Charles Dickens</li>
+					<li class="review-quote">"A great Canadian invention, sure to become a hit all over the globe." -Macleans Magazine</li>
+					<li class="review-quote">"The hottest new gadget of 2018!" -Wired.com</li>
+				</ul>
+
+				<!-- Added recently, not included in firstBuild -->
+				<h3 class="see-more-link">See more reviews!</h3>
+
+			</div>
+		</main>
+		<!-- End of main -->
+		
+		<!-- Start of footer -->
+		<footer id="footer" class="footer">
+			<h5>Contact Information:</h5>
+			<span id="copyrightName">Andrew Kite</span>
+				<!-- roomNumber in it's own <div> container to make it appear under the name Andrew Kite -->
+				<div>
+					<span id="roomNumber">Room B-357</span>
+				</div>
+			<!-- Address of the college designing and hosting the website, not the Glowreads address  -->				
+				<div class="addressFull">
+					<span id="addressStreet">1385 Woodroffe Ave.</span>
+					<!-- Second part of address has own <div> container to make it appear under the Woodroffe address -->
+					<div>
+						<span id="addressCity">Ottawa</span>
+						<span id="addressProvince">Ontario</span>
+						<span id="addressCountry">Canada</span>					
+						<span id="addressPostalCode">K2G 1V8</span>
+					</div>
+				</div>
+			<section id="copyrightWatermark">
+				<h5>Copyright Information:</h5>
+				<p>Copyright &copy; 2018 Glowreads &amp; Andrew Kite</p>
+			</section>
+		</footer>
+		<!-- End of footer -->
+	</body>
+	<!-- End of body -->
 </html>

@@ -1,1 +1,1 @@
-// The JS required for validation of contact form would go in this file 
+// Validation java script

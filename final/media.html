@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- The website will be translated into French at a later date, and will then include the fr-CA attribute -->
+<html lang="en-CA">
+	<!-- Link to style sheet for homepage -->
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	
+	<!-- Start of head -->
+	<head>
+		<meta charset="utf-8">
+			<title>GLOWREADS Media</title>
+			<!-- Will ask client if they would prefer something more pertinent, or verbose at a later date -->
+		<meta name="description" content="Glowreads media page">
+		<!-- Keywords as defined by the client  -->
+		<meta name="keywords" content="glowreads, redpages, books, publishing, reading, new technology, images, photographs, jpegs">
+		<meta name="robots" content="index, follow">
+
+	</head>
+	<!-- End of head -->
+
+	<!-- Start of body -->
+	<body>
+		<!-- Start of header -->
+		<header class="site-header">
+				<!-- Glowreads logo will be an image in top left corner, and links back to the homepage -->
+				<a href="index.html">
+					<img src="images/glowreads_logo.png" class="logo" alt="Glowreads Logo">
+				</a>
+				<!-- In final build, this link will be horizaontally aligned with the logo, and in the right hand corner -->	
+				<h2 id="contact-us" class="contact-link" onmouseover="onmouseContactFunction()">
+					<a href="contact.html" title="contact us">Contact Us!</a>
+				</h2>
+
+			<!-- All navigation links other than "contact us" will be styled the same -->
+			<h3 id="navigation" class="navigation-link">
+				<!-- Main navigation links for the website -->
+				<!-- In the final build they will be evenly spaced out -->
+				<a href="media.html" title="media">media</a>
+				<a href="about_us_page.html" title="about us">about us</a>
+				<a href="technology_page.html" title="technology">technology</a>
+				<a href="kickstarter_page.html" title="kickstarter">kickstarter</a>
+			</h3>				
+		</header>	
+		<!-- End of header -->
+
+		<!-- Start of main -->
+		<main id="main" class="main">
+			
+			
+		</main>
+		<!-- End of main -->
+		
+		<!-- Start of footer -->
+		<footer id="footer" class="footer">
+			<h5>Contact Information:</h5>
+			<span id="copyrightName">Andrew Kite</span>
+				<!-- roomNumber in it's own <div> container to make it appear under the name Andrew Kite -->
+				<div>
+					<span id="roomNumber">Room B-357</span>
+				</div>
+			<!-- Address of the college designing and hosting the website, not the Glowreads address  -->				
+				<div class="addressFull">
+					<span id="addressStreet">1385 Woodroffe Ave.</span>
+					<!-- Second part of address has own <div> container to make it appear under the Woodroffe address -->
+					<div>
+						<span id="addressCity">Ottawa</span>
+						<span id="addressProvince">Ontario</span>
+						<span id="addressCountry">Canada</span>					
+						<span id="addressPostalCode">K2G 1V8</span>
+					</div>
+				</div>
+			<section id="copyrightWatermark">
+				<h5>Copyright Information:</h5>
+				<p>Copyright &copy; 2018 Glowreads &amp; Andrew Kite</p>
+			</section>
+		</footer>
+		<!-- End of footer -->
+	</body>
+	<!-- End of body -->
+</html>
